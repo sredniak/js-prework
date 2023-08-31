@@ -1,17 +1,14 @@
 
-
-let argButtonName, buttonRock, buttonPaper, buttonScissors;
-
-buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
 
 
-function buttonClicked(argButtonName) {
+function buttonClicked(playerMove) {
   clearMessages();
-  console.log(argButtonName + ' został kliknięty');
+  console.log(playerMove + ' został kliknięty');
   
-  let argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+  let computerMove, randomNumber;
 
   function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -20,7 +17,7 @@ function buttonClicked(argButtonName) {
     } else if (argMoveId == 2){
       return 'papier';
     } else if ( argMoveId == 3) {
-      return 'nozyce';
+      return 'nożyce';
     } else {
       printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
       return 'kamień';
@@ -32,9 +29,9 @@ function buttonClicked(argButtonName) {
     console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
       printMessage('Wygrywasz!');
-    } else if (argPlayerMove == 'kamien' && argComputerMove == 'nozyce') {
+    } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
       printMessage('Wygrywasz!');
-    } else if (argPlayerMove == 'nozyce' && argComputerMove == 'papier') {
+    } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
       printMessage('Wygrywasz!');
     } else if (playerMove == computerMove) {
       printMessage('Remis! :)');
@@ -44,8 +41,6 @@ function buttonClicked(argButtonName) {
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   }
   
-  
-  playerMove = argButtonName;
   
   randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('wylosowana liczba to: ' + randomNumber);
