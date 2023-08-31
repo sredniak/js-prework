@@ -1,12 +1,10 @@
 
 
-var argButtonName, buttonTest, buttonRock, buttonPaper, buttonScissors;
+let argButtonName, buttonRock, buttonPaper, buttonScissors;
 
 buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
 buttonScissors = document.getElementById('button-scissors');
-
-
 
 
 function buttonClicked(argButtonName) {
@@ -57,12 +55,6 @@ function buttonClicked(argButtonName) {
   
 
 }
-
-
-
-
-
-
 
 
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
